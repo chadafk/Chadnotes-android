@@ -73,7 +73,7 @@ jobs:
           KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS || 'chadnotes_key' }}
           KEY_PASS: ${{ secrets.SIGNING_KEY_PASSWORD || 'chadnotes2026' }}
         run: |
-          ./gradlew assembleRelease \
+          ./gradlew assembleRelease --info \
             -Pandroid.injected.signing.store.file="${GITHUB_WORKSPACE}/.github/signing/chadnotes-release.jks" \
             -Pandroid.injected.signing.store.password="${STORE_PASS}" \
             -Pandroid.injected.signing.key.alias="${KEY_ALIAS}" \
@@ -87,7 +87,7 @@ jobs:
           ${ANDROID_HOME}/build-tools/34.0.0/apksigner verify --verbose "app/build/outputs/apk/release/Chadnotes-A-Xnotes-Fork.apk"
 
       - name: Upload Chadnotes APK Artifact
-        uses: actions/upload-artifact@v4
+        uses: animations/upload-artifact@v4
         with:
           name: Chadnotes-A-Xnotes-Fork-APK
           path: app/build/outputs/apk/release/Chadnotes-A-Xnotes-Fork.apk
