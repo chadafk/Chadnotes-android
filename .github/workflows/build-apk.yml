@@ -54,7 +54,7 @@ jobs:
 
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add "$KEYSTORE_PATH"
+            git add -f "$KEYSTORE_PATH"
             git commit -m "chore: persist Chadnotes release keystore [skip ci]" || true
             git push || true
           fi
@@ -102,5 +102,5 @@ jobs:
             * **App Name:** `Chadnotes- A Xnotes Fork`
             * **Package ID:** `com.chadnotes.xnotes` (Installs side-by-side with official XNotes)
             * **App Icon:** GigaChad Monochrome Edition
-            * **Features Included:** Stylus Button & Double-Tap Remapper, Parametric & Cubic Bezier Pressure Curves, Scribble-to-Erase, Low-Latency Front Buffer + MotionEventPredictor, Edge-to-Edge Immersive Mode + Collapsible Floating Pill, Draggable Shape Vertices, and Multi-Note Tab Switcher.
+            * **Features Included:** Stylus Button & Double-Tap Remapper, Parametric & Cubic Bézier Pressure Curves, Scribble-to-Erase, Low-Latency Front Buffer + MotionEventPredictor, Edge-to-Edge Immersive Mode + Collapsible Floating Pill, Draggable Shape Vertices, and Multi-Note Tab Switcher.
           files: app/build/outputs/apk/release/Chadnotes-A-Xnotes-Fork.apk
